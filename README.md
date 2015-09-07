@@ -20,7 +20,7 @@ To build and run the unit test:
 
 You can copy the generated freemarker2pdf-&lt;version&gt;.jar to your project to use directly or you can install it to local repository. To install the jar your local repository, issue this command from the project root folder:
 
-   mvn install:install-file -Dfile=target/freemarker2pdf-<version>.jar -DpomFile=pom.xml
+   mvn install:install-file -Dfile=target/freemarker2pdf-&lt;version&gt;.jar -DpomFile=pom.xml
    
 After that, to use the library in your project, just the the dependency to pom.xml like below:
    
