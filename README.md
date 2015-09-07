@@ -1,2 +1,2 @@
 # freemarker2pdf
-Java library for converting freemarker template to pdf file
+Java utilities for converting freemarker template to pdf file
