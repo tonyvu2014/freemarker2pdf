@@ -98,19 +98,19 @@ public class PdfUtils {
 	public static void insertImage(String pdfFile, String imageFile, float x, float y) {
 		Document document = new Document();
 
-        try {
-            PdfWriter.getInstance(document,
-                    new FileOutputStream(pdfFile));
-            document.open();
-
-            Image image = Image.getInstance(imageFile);
-            image.setAbsolutePosition(x, y);
-            document.add(image);
-
-            document.close();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
+	        try {
+	            PdfWriter.getInstance(document,
+	                    new FileOutputStream(pdfFile));
+	            document.open();
+	
+	            Image image = Image.getInstance(imageFile);
+	            image.setAbsolutePosition(x, y);
+	            document.add(image);
+	
+	            document.close();
+	        } catch(Exception e){
+	            e.printStackTrace();
+	        }
 	}
 	
 	/**
@@ -126,15 +126,15 @@ public class PdfUtils {
 	 */
 	public static void convertHtmlToPdf(String htmlPath, String htmlName, String pdfPath, String pdfName) throws FileNotFoundException, DocumentException, com.itextpdf.text.DocumentException {
 		com.itextpdf.text.Document document = new com.itextpdf.text.Document();
-        com.itextpdf.text.pdf.PdfWriter writer = com.itextpdf.text.pdf.PdfWriter.getInstance(document, new FileOutputStream(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION)));
-        document.open();
-        try {
-			XMLWorkerHelper.getInstance().parseXHtml(writer, document,
-			        new FileInputStream(App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION)));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        document.close();
+	        com.itextpdf.text.pdf.PdfWriter writer = com.itextpdf.text.pdf.PdfWriter.getInstance(document, new FileOutputStream(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION)));
+	        document.open();
+	        try {
+				XMLWorkerHelper.getInstance().parseXHtml(writer, document,
+				        new FileInputStream(App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	        document.close();
 	}
 	
 	/**
@@ -150,27 +150,27 @@ public class PdfUtils {
 	 */
 	public static void convertHtml2Pdf(String htmlPath, String htmlName, String pdfPath, String pdfName) throws FileNotFoundException, IOException, com.lowagie.text.DocumentException {
 		/** Creating an instance of iText renderer
-         *  which will be used to generate the pdf from the
-         *  html document.
-         */
-        final ITextRenderer iTextRenderer = new ITextRenderer();
-
-        /**
-         * Setting the document as the url value passed.
-         * This means that the iText renderer
-         * has to parse this html document to generate the pdf.
-         */
-        String htmlFile = App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION);
-        iTextRenderer.setDocument(new File(App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION)));
-        iTextRenderer.layout();
-
-        /** The generated pdf will be written to the file. */
-        final FileOutputStream fileOutputStream =
-                    new FileOutputStream(new File(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION)));
-
-        /** Creating the pdf */
-        iTextRenderer.createPDF(fileOutputStream);
-        fileOutputStream.close();
+	         *  which will be used to generate the pdf from the
+	         *  html document.
+	         */
+	        final ITextRenderer iTextRenderer = new ITextRenderer();
+	
+	        /**
+	         * Setting the document as the url value passed.
+	         * This means that the iText renderer
+	         * has to parse this html document to generate the pdf.
+	         */
+	        String htmlFile = App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION);
+	        iTextRenderer.setDocument(new File(App.getFullPath(htmlPath, htmlName, App.HTML_EXTENSION)));
+	        iTextRenderer.layout();
+	
+	        /** The generated pdf will be written to the file. */
+	        final FileOutputStream fileOutputStream =
+	                    new FileOutputStream(new File(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION)));
+	
+	        /** Creating the pdf */
+	        iTextRenderer.createPDF(fileOutputStream);
+	        fileOutputStream.close();
 	}
 	
 	/**
@@ -189,12 +189,12 @@ public class PdfUtils {
 	public static void convertToPdf(String templatePath, String templateName, Map map, String pdfPath, String pdfName) throws IOException, TemplateException, DocumentException, com.itextpdf.text.DocumentException {
 		String htmlFullPath = HtmlUtils.generateHtmlFromTemplate(templatePath, templateName, map, pdfPath, pdfName);
 		
-        convertHtmlToPdf(pdfPath, pdfName, pdfPath, pdfName);	
-        
-        File htmlFile =  new File(htmlFullPath);
-        if (htmlFile.exists()) {
-        	htmlFile.delete();
-        }
+	        convertHtmlToPdf(pdfPath, pdfName, pdfPath, pdfName);	
+	        
+	        File htmlFile =  new File(htmlFullPath);
+	        if (htmlFile.exists()) {
+	        	htmlFile.delete();
+	        }
 	}
 	
 	/**
@@ -212,11 +212,11 @@ public class PdfUtils {
 	public static void convert2Pdf(String templatePath, String templateName, Map map, String pdfPath, String pdfName) throws IOException, TemplateException, DocumentException  {
 		String htmlFullPath = HtmlUtils.generateHtmlFromTemplate(templatePath, templateName, map, pdfPath, pdfName);
 		
-        convertHtml2Pdf(pdfPath, pdfName, pdfPath, pdfName);	
+        	convertHtml2Pdf(pdfPath, pdfName, pdfPath, pdfName);	
         
-        File htmlFile =  new File(htmlFullPath);
-        if (htmlFile.exists()) {
-        	htmlFile.delete();
-        }
+	        File htmlFile =  new File(htmlFullPath);
+	        if (htmlFile.exists()) {
+	        	htmlFile.delete();
+	        }
 	}
 }
