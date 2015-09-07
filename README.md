@@ -19,11 +19,12 @@ You can copy the generated freemarker2pdf-<version>.jar to your project to use d
    mvn install:install-file -Dfile=target/freemarker2pdf-<version>.jar -DpomFile=pom.xml
    
 After that, to use the library in your project, just the the dependency to pom.xml like below:
-
+   
+   ```xml
    <dependency>
       <groupId>com.tonyvu</groupId>
       <artifactid>freemarker2pdf</artifactId>
       <version>....</version>
    </dependency>
-
+   ```
 
