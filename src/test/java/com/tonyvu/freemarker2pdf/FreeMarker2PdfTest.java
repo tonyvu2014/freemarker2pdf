@@ -49,14 +49,14 @@ public class FreeMarker2PdfTest
     	Map<String, Object> map =  new HashMap<String, Object>();
     	map.put("name", "world");
     	try {
-			PdfUtils.convert2Pdf(templatePath, templateName, map, pdfPath, pdfName);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (TemplateException e) {
-			e.printStackTrace();
-		} catch (DocumentException e) {
-			e.printStackTrace();
-		}
+		PdfUtils.convert2Pdf(templatePath, templateName, map, pdfPath, pdfName);
+	} catch (IOException e) {
+		e.printStackTrace();
+	} catch (TemplateException e) {
+		e.printStackTrace();
+	} catch (DocumentException e) {
+		e.printStackTrace();
+	}
     	
     	File pdfFile = new File(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION));
         assertTrue(pdfFile.exists());
