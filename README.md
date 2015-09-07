@@ -1,5 +1,8 @@
 # freemarker2pdf
-Java utilities for converting freemarker template to pdf file
+Java utilities for converting freemarker template to pdf file.
+
+You can use this library to pass paramters to freemarker template and convert it to html or pdf. There is also helper method to insert image into an existing pdf file. The output pdf can be written to disk or as InputStream (for downloading). Please see javadoc for more details: https://rawgit.com/tonyvu2014/freemarker2pdf/master/src/main/java/com/tonyvu/freemarker2pdf/doc/index.html
+
 
 Steps to create the jar:
 
@@ -14,7 +17,7 @@ To build and run the unit test:
    Similarly, make the change to /src/test/java/com/tonyvu/freemarker2pdf/FreeMarkerToPdfTest.java
    2. Run mvn clean package. If the tests fail, errors will occur.
 
-You can copy the generated freemarker2pdf-<version>.jar to your project to use directly or you can install its to local repository. To install the jar your local repository, issue this command from the project root folder:
+You can copy the generated freemarker2pdf-<version>.jar to your project to use directly or you can install it to local repository. To install the jar your local repository, issue this command from the project root folder:
 
    mvn install:install-file -Dfile=target/freemarker2pdf-<version>.jar -DpomFile=pom.xml
    
