@@ -17,7 +17,7 @@ public class HtmlUtils {
 	 * 
 	 * @param templatePath path to the freemarker template
 	 * @param templateName freemarker template name 
-	 * @param root parameter of key to value
+	 * @param root parameter map of key to value
 	 * @param htmlFilePath path to the generated html file
 	 * @param htmlFileName generated html file name
 	 * @return
