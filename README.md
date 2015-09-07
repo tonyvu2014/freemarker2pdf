@@ -27,4 +27,7 @@ After that, to use the library in your project, just the the dependency to pom.x
       <version>....</version>
    </dependency>
    ```
+Please see the javadoc to find out how to use the library:
+https://rawgit.com/tonyvu2014/freemarker2pdf/master/src/main/java/com/tonyvu/freemarker2pdf/doc/index.html
+   
 
