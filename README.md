@@ -21,7 +21,7 @@ You can copy the generated freemarker2pdf-&lt;version&gt;.jar to your project to
 
    mvn install:install-file -Dfile=target/freemarker2pdf-&lt;version&gt;.jar -DpomFile=pom.xml
    
-After that, to use the library in your project, just the the dependency to pom.xml like below:
+After that, to use the library in your project, just add the dependency to pom.xml like below:
    
    ```xml
    <dependency>
