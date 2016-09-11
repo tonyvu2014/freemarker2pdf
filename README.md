@@ -15,7 +15,7 @@ Steps to create the jar:
 To build and run the unit test: 
 
    1. Go to the file /src/test/java/com/tonyvu/freemarker2pdf/FreeMarker2PdfTest.java and update the templatePath and pdfPath to reflect setup in your environment.
-   2. Run mvn clean package. If the tests fail, errors will occur.
+   2. Run mvn clean package. If the tests fail, errors will occur. (Or you can run mvn test)
 
 You can copy the generated freemarker2pdf-&lt;version&gt;.jar to your project to use directly or you can install it to local repository. To install the jar your local repository, issue this command from the project root folder:
 
