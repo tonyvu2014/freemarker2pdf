@@ -42,9 +42,10 @@ public class FreeMarker2PdfTest
      */
     public void testFreeMarker2Pdf()
     {
-    	String templatePath = "../";
+    	String currentPath = FreeMarker2PdfTest.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+    	String templatePath = currentPath;
     	String templateName = "helloworld";
-    	String pdfPath ="../";
+    	String pdfPath = currentPath;
     	String pdfName = "helloworld";
     	Map<String, Object> map =  new HashMap<String, Object>();
     	map.put("name", "world");
