@@ -37,12 +37,12 @@ public class FreeMarker2PdfTest
     }
 
     /**
-     * Rigourous Test :-)
+     * Test convertToPdf()
      */
     public void testFreeMarker2Pdf()
     {
 		String templateName = "helloworld";
-    	String testPath = getClass().getResource("/" + templateName +".ftl").getFile();
+    	String testPath = getClass().getResource("/" + templateName + ".ftl").getFile();
 		String templatePath = testPath.substring(0, testPath.lastIndexOf(File.separator));
     	String pdfPath = templatePath;
     	String pdfName = "helloworld";
