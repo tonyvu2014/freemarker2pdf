@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -42,22 +41,22 @@ public class FreeMarker2PdfTest
      */
     public void testFreeMarker2Pdf()
     {
-    	String currentPath = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
-    	String templatePath = currentPath;
-    	String templateName = "helloworld";
-    	String pdfPath = currentPath;
+		String templateName = "helloworld";
+    	String testPath = getClass().getResource("/" + templateName +".ftl").getFile();
+		String templatePath = testPath.substring(0, testPath.lastIndexOf(File.separator));
+    	String pdfPath = templatePath;
     	String pdfName = "helloworld";
     	Map<String, Object> map =  new HashMap<String, Object>();
     	map.put("name", "world");
     	try {
-		PdfUtils.convert2Pdf(templatePath, templateName, map, pdfPath, pdfName);
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (TemplateException e) {
-		e.printStackTrace();
-	} catch (DocumentException e) {
-		e.printStackTrace();
-	}
+		    PdfUtils.convert2Pdf(templatePath, templateName, map, pdfPath, pdfName);
+	    } catch (IOException e) {
+		    e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+ 	    } catch (DocumentException e) {
+			e.printStackTrace();
+	    }
     	
     	File pdfFile = new File(App.getFullPath(pdfPath, pdfName, App.PDF_EXTENSION));
         assertTrue(pdfFile.exists());
